@@ -6,6 +6,8 @@ from enum import Enum
 from urllib.request import urlopen
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.common.exceptions import ElementNotInteractableException, NoSuchElementException
+
 # Chrome のオプションを設定する
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')
@@ -18,7 +20,7 @@ driver = webdriver.Remote(
 )
 
 
-def _get_table_id() -> int:
+def get_table_id() -> int:
     table = driver.find_element_by_class_name('report')
     table_id = table.get_attribute('id')
 
@@ -60,6 +62,35 @@ def format_columns_to_df(columns: list):
     return df
 
 
+def get_statements_title_list():
+    '''
+    Financial Statementのタブをクリックして表示されるstatementの一覧を取得するメソッド
+    '''
+    statements_title_list = []
+    for i in range(1, 8):
+        try:
+            statement = driver.find_element_by_id(f"r{i}")
+            if statement.text:
+                statement.click()
+                statements_title_list += [statement.text]
+        except NoSuchElementException:
+            continue
+    return statements_title_list
+
+
+def click_title_of_statemet(statements_title_list: list):
+    '''
+    Financial Statementのタブをクリックして表示されるstatementから
+    balance sheet, income statement, cash flowをclickして表示させるメソッド
+    '''
+    # balance sheetのみ正規表現をかけているが、income statement, cash flow にも必要
+    title = [title for title in statements_title_list if re.match(
+        '.*balance.*', title, re.IGNORECASE)]
+    if len(title) != 1:
+        title = min(title)
+    driver.find_element_by_xpath(f"//*[text()='{title}']").click()
+
+
 if __name__ == '__main__':
     source_df = pd.read_csv('./2019_QTR4.csv')
     source_df = source_df[source_df['Form_Type'] == '10-Q']
@@ -71,58 +102,38 @@ if __name__ == '__main__':
         accession_number = row['accession_number']
 
         # Financial Statementsタブを開いて財務三表を表示させる
-        print(f'https://www.sec.gov/cgi-bin/viewer?action=view&cik={cik}&accession_number={accession_number}&xbrl_type=v#')
         driver.get(
             f'https://www.sec.gov/cgi-bin/viewer?action=view&cik={cik}&accession_number={accession_number}&xbrl_type=v#')
-        driver.find_element_by_xpath("//*[@id='menu_cat2']").click()
+        driver.find_element_by_xpath(
+            "//*[text()='Financial Statements']").click()
 
-        # {2:Balance Sheets}, {4: stetement of operations}, {6: statement of cash flow} テーブルを開くためのクリック
-        for i in [2, 4, 6]:
-            try:
-                driver.find_element_by_id(f"r{i}").click()
-            except:
-                time.sleep(2)
-                driver.find_element_by_id(f"r{i}").click()
-            table_id = _get_table_id()
-            table_contents = _get_table_contents(table_id)
-            tr_tag_num = get_tr_tag_num(table_contents)
-            td_tag_num = get_td_tag_num(tr_tag_num)
+        statements_title_list = get_statements_title_list()
+        click_title_of_statemet(statements_title_list)
 
-            columns_list = [[] for i in range(td_tag_num)]
+        table_id = get_table_id()
+        table_contents = _get_table_contents(table_id)
+        tr_tag_num = get_tr_tag_num(table_contents)
+        td_tag_num = get_td_tag_num(tr_tag_num)
 
-            for tr in range(3, tr_tag_num + 1):
-                for td in range(1, td_tag_num + 1):
-                    try:
-                        # 2 = BS 4 = Inconmeの並びじゃない場合もある
-                        # balace sheet
-                        if i == 2:
-                            try:
-                                value = driver.find_element_by_xpath(
-                                    f"//*[@id='{table_id}']/tbody/tr[{tr}]/td[{td}]").text
-                            except:
-                                value = driver.find_element_by_xpath(
-                                    f"//*[@id='{table_id}']/tbody/tr[{tr}]/td[{td}]/a").text
-                        # operation
-                        elif i == 4:
-                            value = driver.find_element_by_xpath(
-                                f"//*[@id='{table_id}']/tbody/tr[{tr}]/td[{td}]").text
-                        # cash flow
-                        elif i == 6:
-                            value = driver.find_element_by_xpath(
-                                f"//*[@id='{table_id}']/tbody/tr[{tr}]/td[{td}]").text
-                        columns_list[td-1] += [value]
-                    except:
-                        pass
+        columns_list = [[] for i in range(td_tag_num)]
 
-            df = format_columns_to_df(columns_list)
+        # headerの数を取得する
+        th_tag_num = 3
+        for tr in range(th_tag_num, tr_tag_num + 1):
+            for td in range(1, td_tag_num + 1):
+                try:
+                    value = driver.find_element_by_xpath(
+                        f"//*[@id='{table_id}']/tbody/tr[{tr}]/td[{td}]").text
+                except:
+                    value = driver.find_element_by_xpath(
+                        f"//*[@id='{table_id}']/tbody/tr[{tr}]/td[{td}]/a").text
+                columns_list[td-1] += [value]
 
-            if i == 2:
-                df.to_csv(f'./{cik}_balance_sheet.csv')
-            elif i == 4:
-                df.to_csv(f'./{cik}_operations.csv')
-            elif i == 6:
-                df.to_csv(f'./{cik}_cash_flow.csv')
+        table_df = format_columns_to_df(columns_list)
+        row_df = table_df.iloc[:, 0:2].T
+
+        sql = f'''insert into blance_sheets {'(' + ','.join(row_df.iloc[0,:].astype(str).to_list()) + ')'}
+                  values {'(' + ','.join(row_df.iloc[1,:].astype(str).to_list()) + ')'}'''
 
     # ブラウザを終了する
     driver.quit()
-
