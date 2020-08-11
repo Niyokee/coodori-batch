@@ -72,7 +72,7 @@ def download_full_index():
     dt_now = datetime.datetime.now()
     this_year = dt_now.year
     # TODO 2019までしか取れていない
-    for year in range(2017, this_year):
+    for year in range(2010, this_year):
         for term in range(1, 5):
             term = 'QTR' + str(term)
             url = base_url + '/' + str(year) + '/' + term + '/xbrl.idx'
