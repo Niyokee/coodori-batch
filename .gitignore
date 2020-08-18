@@ -2,6 +2,5 @@
 *.xlsx
 /data
 *.pyc
-*.txt
 *.log
 *.DS_Store

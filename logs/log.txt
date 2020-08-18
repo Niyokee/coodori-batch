@@ -1,0 +1,833 @@
+2020-08-05 22:56:38,099 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                   99
+CIK                                                     1090872
+Company_Name                           AGILENT TECHNOLOGIES INC
+Form_Type                                                  10-Q
+Date_Filed                                           2010-03-10
+Filename            edgar/data/1090872/0001104659-10-013535.txt
+File_Path             edgar/data/1090872/000110465910013535.txt
+accession_number                           0001104659-10-013535
+year                                                       2010
+QT                                                         QTR1
+Name: 8, dtype: object
+2020-08-05 22:56:38,100 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 1, cik: 1090872
+2020-08-05 22:56:38,100 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:38,928 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:39,553 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:40,264 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:40,265 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                               286
+CIK                                                     2969
+Company_Name               AIR PRODUCTS & CHEMICALS INC /DE/
+Form_Type                                               10-Q
+Date_Filed                                        2010-01-26
+Filename            edgar/data/2969/0000950123-10-005134.txt
+File_Path             edgar/data/2969/000095012310005134.txt
+accession_number                        0000950123-10-005134
+year                                                    2010
+QT                                                      QTR1
+Name: 11, dtype: object
+2020-08-05 22:56:40,266 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 2969
+2020-08-05 22:56:40,266 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:40,478 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:40,717 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:40,982 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:40,983 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                  129
+CIK                                                     1140859
+Company_Name                             AMERISOURCEBERGEN CORP
+Form_Type                                                  10-Q
+Date_Filed                                           2010-02-05
+Filename            edgar/data/1140859/0000950123-10-009185.txt
+File_Path             edgar/data/1140859/000095012310009185.txt
+accession_number                           0000950123-10-009185
+year                                                       2010
+QT                                                         QTR1
+Name: 34, dtype: object
+2020-08-05 22:56:40,984 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 1140859
+2020-08-05 22:56:40,984 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:41,187 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:41,403 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:41,673 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:41,673 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                               373
+CIK                                                     6281
+Company_Name                              ANALOG DEVICES INC
+Form_Type                                               10-Q
+Date_Filed                                        2010-02-17
+Filename            edgar/data/6281/0000950123-10-013755.txt
+File_Path             edgar/data/6281/000095012310013755.txt
+accession_number                        0000950123-10-013755
+year                                                    2010
+QT                                                      QTR1
+Name: 39, dtype: object
+2020-08-05 22:56:41,674 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 6281
+2020-08-05 22:56:41,674 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:41,807 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:41,995 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:42,272 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:42,273 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 565
+CIK                                                     929887
+Company_Name                                  APOLLO GROUP INC
+Form_Type                                                 10-Q
+Date_Filed                                          2010-01-07
+Filename            edgar/data/929887/0000950123-10-000976.txt
+File_Path             edgar/data/929887/000095012310000976.txt
+accession_number                          0000950123-10-000976
+year                                                      2010
+QT                                                        QTR1
+Name: 43, dtype: object
+2020-08-05 22:56:42,274 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 929887
+2020-08-05 22:56:42,274 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:42,428 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:42,615 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:42,908 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:42,908 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 566
+CIK                                                     929887
+Company_Name                                  APOLLO GROUP INC
+Form_Type                                                 10-Q
+Date_Filed                                          2010-03-29
+Filename            edgar/data/929887/0000950123-10-029090.txt
+File_Path             edgar/data/929887/000095012310029090.txt
+accession_number                          0000950123-10-029090
+year                                                      2010
+QT                                                        QTR1
+Name: 44, dtype: object
+2020-08-05 22:56:42,909 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 929887
+2020-08-05 22:56:42,909 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:43,046 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:43,254 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:43,578 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:43,578 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 310
+CIK                                                     320193
+Company_Name                                         APPLE INC
+Form_Type                                                 10-Q
+Date_Filed                                          2010-01-25
+Filename            edgar/data/320193/0001193125-10-012085.txt
+File_Path             edgar/data/320193/000119312510012085.txt
+accession_number                          0001193125-10-012085
+year                                                      2010
+QT                                                        QTR1
+Name: 45, dtype: object
+2020-08-05 22:56:43,580 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 320193
+2020-08-05 22:56:43,580 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:44,254 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:44,475 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:44,769 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:44,769 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                               389
+CIK                                                     6951
+Company_Name                       APPLIED MATERIALS INC /DE
+Form_Type                                               10-Q
+Date_Filed                                        2010-03-09
+Filename            edgar/data/6951/0000950123-10-022556.txt
+File_Path             edgar/data/6951/000095012310022556.txt
+accession_number                        0000950123-10-022556
+year                                                    2010
+QT                                                      QTR1
+Name: 47, dtype: object
+2020-08-05 22:56:44,770 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 6951
+2020-08-05 22:56:44,771 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:44,996 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:45,195 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:45,533 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:45,534 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                               394
+CIK                                                     7084
+Company_Name                       ARCHER DANIELS MIDLAND CO
+Form_Type                                               10-Q
+Date_Filed                                        2010-02-08
+Filename            edgar/data/7084/0000007084-10-000006.txt
+File_Path             edgar/data/7084/000000708410000006.txt
+accession_number                        0000007084-10-000006
+year                                                    2010
+QT                                                      QTR1
+Name: 49, dtype: object
+2020-08-05 22:56:45,535 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 7084
+2020-08-05 22:56:45,535 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:45,695 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:45,873 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:46,162 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:46,162 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                               504
+CIK                                                     8670
+Company_Name                   AUTOMATIC DATA PROCESSING INC
+Form_Type                                               10-Q
+Date_Filed                                        2010-02-09
+Filename            edgar/data/8670/0000008670-10-000005.txt
+File_Path             edgar/data/8670/000000867010000005.txt
+accession_number                        0000008670-10-000005
+year                                                    2010
+QT                                                      QTR1
+Name: 56, dtype: object
+2020-08-05 22:56:46,163 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 8670
+2020-08-05 22:56:46,163 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:46,337 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:46,513 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:46,826 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:46,827 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 502
+CIK                                                     866787
+Company_Name                                      AUTOZONE INC
+Form_Type                                                 10-Q
+Date_Filed                                          2010-03-18
+Filename            edgar/data/866787/0000950123-10-025907.txt
+File_Path             edgar/data/866787/000095012310025907.txt
+accession_number                          0000950123-10-025907
+year                                                      2010
+QT                                                        QTR1
+Name: 57, dtype: object
+2020-08-05 22:56:46,828 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 866787
+2020-08-05 22:56:46,828 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:47,531 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:48,239 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:48,900 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:48,901 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                               522
+CIK                                                     8858
+Company_Name                                       AVNET INC
+Form_Type                                               10-Q
+Date_Filed                                        2010-01-29
+Filename            edgar/data/8858/0000950123-10-006586.txt
+File_Path             edgar/data/8858/000095012310006586.txt
+accession_number                        0000950123-10-006586
+year                                                    2010
+QT                                                      QTR1
+Name: 59, dtype: object
+2020-08-05 22:56:48,902 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 8858
+2020-08-05 22:56:48,902 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:49,635 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:50,791 - ERROR - 10-k.py - __main__ - <module> - 
+2020-08-05 22:56:50,792 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                  232
+CIK                                                     1467373
+Company_Name                                      Accenture plc
+Form_Type                                                  10-Q
+Date_Filed                                           2010-03-26
+Filename            edgar/data/1467373/0001193125-10-068566.txt
+File_Path             edgar/data/1467373/000119312510068566.txt
+accession_number                           0001193125-10-068566
+year                                                       2010
+QT                                                         QTR1
+Name: 61, dtype: object
+2020-08-05 22:56:50,793 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 1467373
+2020-08-05 22:56:50,793 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:51,026 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:51,181 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:51,480 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:51,480 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 91
+CIK                                                     10795
+Company_Name                            BECTON DICKINSON & CO
+Form_Type                                                10-Q
+Date_Filed                                         2010-02-08
+Filename            edgar/data/10795/0000950123-10-009988.txt
+File_Path             edgar/data/10795/000095012310009988.txt
+accession_number                         0000950123-10-009988
+year                                                     2010
+QT                                                       QTR1
+Name: 71, dtype: object
+2020-08-05 22:56:51,481 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 10795
+2020-08-05 22:56:51,481 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:51,646 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:51,831 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:52,153 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:52,153 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 523
+CIK                                                     886158
+Company_Name                             BED BATH & BEYOND INC
+Form_Type                                                 10-Q
+Date_Filed                                          2010-01-06
+Filename            edgar/data/886158/0001104659-10-000569.txt
+File_Path             edgar/data/886158/000110465910000569.txt
+accession_number                          0001104659-10-000569
+year                                                      2010
+QT                                                        QTR1
+Name: 73, dtype: object
+2020-08-05 22:56:52,154 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 886158
+2020-08-05 22:56:52,155 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:52,338 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:52,542 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:52,838 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:52,839 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 430
+CIK                                                     764478
+Company_Name                                   BEST BUY CO INC
+Form_Type                                                 10-Q
+Date_Filed                                          2010-01-07
+Filename            edgar/data/764478/0001104659-10-000733.txt
+File_Path             edgar/data/764478/000110465910000733.txt
+accession_number                          0001104659-10-000733
+year                                                      2010
+QT                                                        QTR1
+Name: 75, dtype: object
+2020-08-05 22:56:52,842 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 764478
+2020-08-05 22:56:52,843 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:53,526 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:53,730 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:54,180 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:54,182 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 499
+CIK                                                     864328
+Company_Name                                    BJ SERVICES CO
+Form_Type                                                 10-Q
+Date_Filed                                          2010-02-09
+Filename            edgar/data/864328/0001193125-10-024580.txt
+File_Path             edgar/data/864328/000119312510024580.txt
+accession_number                          0001193125-10-024580
+year                                                      2010
+QT                                                        QTR1
+Name: 77, dtype: object
+2020-08-05 22:56:54,188 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 864328
+2020-08-05 22:56:54,189 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:54,406 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:54,657 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:54,979 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:54,980 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 486
+CIK                                                     835729
+Company_Name                                  BMC SOFTWARE INC
+Form_Type                                                 10-Q
+Date_Filed                                          2010-01-28
+Filename            edgar/data/835729/0001193125-10-015411.txt
+File_Path             edgar/data/835729/000119312510015411.txt
+accession_number                          0001193125-10-015411
+year                                                      2010
+QT                                                        QTR1
+Name: 78, dtype: object
+2020-08-05 22:56:54,982 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 835729
+2020-08-05 22:56:54,982 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:55,125 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:55,307 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:55,621 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:55,622 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 320
+CIK                                                     356028
+Company_Name                                          CA, INC.
+Form_Type                                                 10-Q
+Date_Filed                                          2010-01-29
+Filename            edgar/data/356028/0000950123-10-006814.txt
+File_Path             edgar/data/356028/000095012310006814.txt
+accession_number                          0000950123-10-006814
+year                                                      2010
+QT                                                        QTR1
+Name: 98, dtype: object
+2020-08-05 22:56:55,624 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 356028
+2020-08-05 22:56:55,624 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:55,816 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:55,982 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:56,313 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:56,314 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                249
+CIK                                                     16732
+Company_Name                                 CAMPBELL SOUP CO
+Form_Type                                                10-Q
+Date_Filed                                         2010-03-10
+Filename            edgar/data/16732/0000950123-10-022850.txt
+File_Path             edgar/data/16732/000095012310022850.txt
+accession_number                         0000950123-10-022850
+year                                                     2010
+QT                                                       QTR1
+Name: 102, dtype: object
+2020-08-05 22:56:56,315 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 16732
+2020-08-05 22:56:56,315 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:56,516 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:56,685 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:56,945 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:56,945 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 403
+CIK                                                     721371
+Company_Name                               CARDINAL HEALTH INC
+Form_Type                                                 10-Q
+Date_Filed                                          2010-02-05
+Filename            edgar/data/721371/0001193125-10-023332.txt
+File_Path             edgar/data/721371/000119312510023332.txt
+accession_number                          0001193125-10-023332
+year                                                      2010
+QT                                                        QTR1
+Name: 106, dtype: object
+2020-08-05 22:56:56,946 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 721371
+2020-08-05 22:56:56,946 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:57,135 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:57,358 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:57,701 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:57,701 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 494
+CIK                                                     858877
+Company_Name                                 CISCO SYSTEMS INC
+Form_Type                                                 10-Q
+Date_Filed                                          2010-02-17
+Filename            edgar/data/858877/0001193125-10-032740.txt
+File_Path             edgar/data/858877/000119312510032740.txt
+accession_number                          0001193125-10-032740
+year                                                      2010
+QT                                                        QTR1
+Name: 122, dtype: object
+2020-08-05 22:56:57,702 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 858877
+2020-08-05 22:56:57,702 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:58,095 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:58,313 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:58,627 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:58,627 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                264
+CIK                                                     21076
+Company_Name                                   CLOROX CO /DE/
+Form_Type                                                10-Q
+Date_Filed                                         2010-02-05
+Filename            edgar/data/21076/0001206774-10-000241.txt
+File_Path             edgar/data/21076/000120677410000241.txt
+accession_number                         0001206774-10-000241
+year                                                     2010
+QT                                                       QTR1
+Name: 127, dtype: object
+2020-08-05 22:56:58,628 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 21076
+2020-08-05 22:56:58,628 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:58,795 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:58,980 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:59,264 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:59,264 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                  111
+CIK                                                     1116132
+Company_Name                                          COACH INC
+Form_Type                                                  10-Q
+Date_Filed                                           2010-02-03
+Filename            edgar/data/1116132/0001144204-10-005154.txt
+File_Path             edgar/data/1116132/000114420410005154.txt
+accession_number                           0001144204-10-005154
+year                                                       2010
+QT                                                         QTR1
+Name: 130, dtype: object
+2020-08-05 22:56:59,265 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 1116132
+2020-08-05 22:56:59,265 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:59,408 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:56:59,593 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:56:59,843 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:56:59,844 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                270
+CIK                                                     23082
+Company_Name                           COMPUTER SCIENCES CORP
+Form_Type                                                10-Q
+Date_Filed                                         2010-02-10
+Filename            edgar/data/23082/0000023082-10-000015.txt
+File_Path             edgar/data/23082/000002308210000015.txt
+accession_number                         0000023082-10-000015
+year                                                     2010
+QT                                                       QTR1
+Name: 137, dtype: object
+2020-08-05 22:56:59,845 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 23082
+2020-08-05 22:56:59,845 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:56:59,994 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:00,178 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:00,900 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:00,901 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                271
+CIK                                                     23217
+Company_Name                           CONAGRA FOODS INC /DE/
+Form_Type                                                10-Q
+Date_Filed                                         2010-01-05
+Filename            edgar/data/23217/0000950123-10-000408.txt
+File_Path             edgar/data/23217/000095012310000408.txt
+accession_number                         0000950123-10-000408
+year                                                     2010
+QT                                                       QTR1
+Name: 138, dtype: object
+2020-08-05 22:57:00,902 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 23217
+2020-08-05 22:57:00,902 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:01,107 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:01,290 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:01,602 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:01,603 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 545
+CIK                                                     909832
+Company_Name                        COSTCO WHOLESALE CORP /NEW
+Form_Type                                                 10-Q
+Date_Filed                                          2010-03-17
+Filename            edgar/data/909832/0001193125-10-059399.txt
+File_Path             edgar/data/909832/000119312510059399.txt
+accession_number                          0001193125-10-059399
+year                                                      2010
+QT                                                        QTR1
+Name: 145, dtype: object
+2020-08-05 22:57:01,603 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 909832
+2020-08-05 22:57:01,604 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:01,777 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:02,052 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:02,315 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:02,315 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                  215
+CIK                                                     1385187
+Company_Name                                       Covidien plc
+Form_Type                                                  10-Q
+Date_Filed                                           2010-01-26
+Filename            edgar/data/1385187/0001193125-10-012479.txt
+File_Path             edgar/data/1385187/000119312510012479.txt
+accession_number                           0001193125-10-012479
+year                                                       2010
+QT                                                         QTR1
+Name: 157, dtype: object
+2020-08-05 22:57:02,317 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 1385187
+2020-08-05 22:57:02,317 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:02,501 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:02,712 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:02,967 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:02,967 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 300
+CIK                                                     315189
+Company_Name                                        DEERE & CO
+Form_Type                                                 10-Q
+Date_Filed                                          2010-03-01
+Filename            edgar/data/315189/0001104659-10-010697.txt
+File_Path             edgar/data/315189/000110465910010697.txt
+accession_number                          0001104659-10-010697
+year                                                      2010
+QT                                                        QTR1
+Name: 161, dtype: object
+2020-08-05 22:57:02,968 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 315189
+2020-08-05 22:57:02,968 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:03,148 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:03,322 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:03,566 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:03,567 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 503
+CIK                                                     866873
+Company_Name                                DEL MONTE FOODS CO
+Form_Type                                                 10-Q
+Date_Filed                                          2010-03-10
+Filename            edgar/data/866873/0001193125-10-052571.txt
+File_Path             edgar/data/866873/000119312510052571.txt
+accession_number                          0001193125-10-052571
+year                                                      2010
+QT                                                        QTR1
+Name: 162, dtype: object
+2020-08-05 22:57:03,568 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 866873
+2020-08-05 22:57:03,568 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:03,737 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:03,951 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:04,208 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:04,209 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 397
+CIK                                                     712515
+Company_Name                              ELECTRONIC ARTS INC.
+Form_Type                                                 10-Q
+Date_Filed                                          2010-02-09
+Filename            edgar/data/712515/0001193125-10-025856.txt
+File_Path             edgar/data/712515/000119312510025856.txt
+accession_number                          0001193125-10-025856
+year                                                      2010
+QT                                                        QTR1
+Name: 190, dtype: object
+2020-08-05 22:57:04,210 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 712515
+2020-08-05 22:57:04,211 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:04,418 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:04,596 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:04,899 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:04,899 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                312
+CIK                                                     32604
+Company_Name                              EMERSON ELECTRIC CO
+Form_Type                                                10-Q
+Date_Filed                                         2010-02-03
+Filename            edgar/data/32604/0001144204-10-005166.txt
+File_Path             edgar/data/32604/000114420410005166.txt
+accession_number                         0001144204-10-005166
+year                                                     2010
+QT                                                       QTR1
+Name: 193, dtype: object
+2020-08-05 22:57:04,900 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 32604
+2020-08-05 22:57:04,901 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:05,076 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:05,276 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:05,534 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:05,534 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                   57
+CIK                                                     1048911
+Company_Name                                         FEDEX CORP
+Form_Type                                                  10-Q
+Date_Filed                                           2010-03-19
+Filename            edgar/data/1048911/0000950123-10-026283.txt
+File_Path             edgar/data/1048911/000095012310026283.txt
+accession_number                           0000950123-10-026283
+year                                                       2010
+QT                                                         QTR1
+Name: 209, dtype: object
+2020-08-05 22:57:05,535 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 1048911
+2020-08-05 22:57:05,535 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:05,685 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:05,875 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:06,154 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:06,154 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 501
+CIK                                                     866374
+Company_Name                    FLEXTRONICS INTERNATIONAL LTD.
+Form_Type                                                 10-Q
+Date_Filed                                          2010-02-02
+Filename            edgar/data/866374/0000950123-10-007677.txt
+File_Path             edgar/data/866374/000095012310007677.txt
+accession_number                          0000950123-10-007677
+year                                                      2010
+QT                                                        QTR1
+Name: 214, dtype: object
+2020-08-05 22:57:06,155 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 866374
+2020-08-05 22:57:06,156 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:06,358 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:06,583 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:06,888 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:06,888 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                329
+CIK                                                     38074
+Company_Name                          FOREST LABORATORIES INC
+Form_Type                                                10-Q
+Date_Filed                                         2010-02-09
+Filename            edgar/data/38074/0000038074-10-000005.txt
+File_Path             edgar/data/38074/000003807410000005.txt
+accession_number                         0000038074-10-000005
+year                                                     2010
+QT                                                       QTR1
+Name: 223, dtype: object
+2020-08-05 22:57:06,889 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 38074
+2020-08-05 22:57:06,889 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:07,075 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:07,282 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:07,588 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:07,588 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                331
+CIK                                                     38777
+Company_Name                           FRANKLIN RESOURCES INC
+Form_Type                                                10-Q
+Date_Filed                                         2010-02-08
+Filename            edgar/data/38777/0001193125-10-024165.txt
+File_Path             edgar/data/38777/000119312510024165.txt
+accession_number                         0001193125-10-024165
+year                                                     2010
+QT                                                       QTR1
+Name: 228, dtype: object
+2020-08-05 22:57:07,589 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 38777
+2020-08-05 22:57:07,590 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:07,838 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:08,079 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:08,536 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:08,537 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                336
+CIK                                                     40704
+Company_Name                                GENERAL MILLS INC
+Form_Type                                                10-Q
+Date_Filed                                         2010-03-24
+Filename            edgar/data/40704/0000950123-10-027743.txt
+File_Path             edgar/data/40704/000095012310027743.txt
+accession_number                         0000950123-10-027743
+year                                                     2010
+QT                                                       QTR1
+Name: 239, dtype: object
+2020-08-05 22:57:08,538 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 40704
+2020-08-05 22:57:08,538 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:08,739 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:08,942 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:09,232 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:09,233 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                166
+CIK                                                     12659
+Company_Name                                    H&R BLOCK INC
+Form_Type                                                10-Q
+Date_Filed                                         2010-03-08
+Filename            edgar/data/12659/0000950123-10-022156.txt
+File_Path             edgar/data/12659/000095012310022156.txt
+accession_number                         0000950123-10-022156
+year                                                     2010
+QT                                                       QTR1
+Name: 253, dtype: object
+2020-08-05 22:57:09,234 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 12659
+2020-08-05 22:57:09,234 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:09,421 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:09,630 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:09,887 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:09,888 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 260
+CIK                                                     202058
+Company_Name                                  HARRIS CORP /DE/
+Form_Type                                                 10-Q
+Date_Filed                                          2010-01-28
+Filename            edgar/data/202058/0000950123-10-006167.txt
+File_Path             edgar/data/202058/000095012310006167.txt
+accession_number                          0000950123-10-006167
+year                                                      2010
+QT                                                        QTR1
+Name: 256, dtype: object
+2020-08-05 22:57:09,892 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 202058
+2020-08-05 22:57:09,892 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:10,077 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:10,268 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:10,536 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:10,536 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                344
+CIK                                                     46640
+Company_Name                                     HEINZ H J CO
+Form_Type                                                10-Q
+Date_Filed                                         2010-02-25
+Filename            edgar/data/46640/0000950123-10-016994.txt
+File_Path             edgar/data/46640/000095012310016994.txt
+accession_number                         0000950123-10-016994
+year                                                     2010
+QT                                                       QTR1
+Name: 259, dtype: object
+2020-08-05 22:57:10,537 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 46640
+2020-08-05 22:57:10,537 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:10,731 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:10,937 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:11,233 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:11,234 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                345
+CIK                                                     46765
+Company_Name                            HELMERICH & PAYNE INC
+Form_Type                                                10-Q
+Date_Filed                                         2010-02-03
+Filename            edgar/data/46765/0001104659-10-004636.txt
+File_Path             edgar/data/46765/000110465910004636.txt
+accession_number                         0001104659-10-004636
+year                                                     2010
+QT                                                       QTR1
+Name: 260, dtype: object
+2020-08-05 22:57:11,235 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 46765
+2020-08-05 22:57:11,235 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:11,657 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:11,852 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:12,213 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:12,213 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                348
+CIK                                                     47217
+Company_Name                               HEWLETT PACKARD CO
+Form_Type                                                10-Q
+Date_Filed                                         2010-03-11
+Filename            edgar/data/47217/0001047469-10-002073.txt
+File_Path             edgar/data/47217/000104746910002073.txt
+accession_number                         0001047469-10-002073
+year                                                     2010
+QT                                                       QTR1
+Name: 264, dtype: object
+2020-08-05 22:57:12,214 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 47217
+2020-08-05 22:57:12,214 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:12,391 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:12,579 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:12,847 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:12,847 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 495
+CIK                                                     859737
+Company_Name                                       HOLOGIC INC
+Form_Type                                                 10-Q
+Date_Filed                                          2010-02-04
+Filename            edgar/data/859737/0001193125-10-021684.txt
+File_Path             edgar/data/859737/000119312510021684.txt
+accession_number                          0001193125-10-021684
+year                                                      2010
+QT                                                        QTR1
+Name: 265, dtype: object
+2020-08-05 22:57:12,848 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 859737
+2020-08-05 22:57:12,848 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:13,005 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:13,204 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:13,475 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:13,476 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 316
+CIK                                                     353944
+Company_Name                     INTERNATIONAL GAME TECHNOLOGY
+Form_Type                                                 10-Q
+Date_Filed                                          2010-02-11
+Filename            edgar/data/353944/0001437749-10-000316.txt
+File_Path             edgar/data/353944/000143774910000316.txt
+accession_number                          0001437749-10-000316
+year                                                      2010
+QT                                                        QTR1
+Name: 280, dtype: object
+2020-08-05 22:57:13,477 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 353944
+2020-08-05 22:57:13,477 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:13,648 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:13,862 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:14,189 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:14,190 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 535
+CIK                                                     896878
+Company_Name                                        INTUIT INC
+Form_Type                                                 10-Q
+Date_Filed                                          2010-03-01
+Filename            edgar/data/896878/0000950123-10-019101.txt
+File_Path             edgar/data/896878/000095012310019101.txt
+accession_number                          0000950123-10-019101
+year                                                      2010
+QT                                                        QTR1
+Name: 283, dtype: object
+2020-08-05 22:57:14,191 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 896878
+2020-08-05 22:57:14,191 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:14,360 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:14,574 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:14,842 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:14,843 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                360
+CIK                                                     52988
+Company_Name                JACOBS ENGINEERING GROUP INC /DE/
+Form_Type                                                10-Q
+Date_Filed                                         2010-01-28
+Filename            edgar/data/52988/0001193125-10-015547.txt
+File_Path             edgar/data/52988/000119312510015547.txt
+accession_number                         0001193125-10-015547
+year                                                     2010
+QT                                                       QTR1
+Name: 292, dtype: object
+2020-08-05 22:57:14,844 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 52988
+2020-08-05 22:57:14,844 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:15,039 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:15,270 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:15,561 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:15,562 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                362
+CIK                                                     53669
+Company_Name                             JOHNSON CONTROLS INC
+Form_Type                                                10-Q
+Date_Filed                                         2010-02-03
+Filename            edgar/data/53669/0000950123-10-008106.txt
+File_Path             edgar/data/53669/000095012310008106.txt
+accession_number                         0000950123-10-008106
+year                                                     2010
+QT                                                       QTR1
+Name: 295, dtype: object
+2020-08-05 22:57:15,564 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 53669
+2020-08-05 22:57:15,565 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:15,762 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:15,972 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:16,264 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:16,265 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 456
+CIK                                                     801898
+Company_Name                                    JOY GLOBAL INC
+Form_Type                                                 10-Q
+Date_Filed                                          2010-03-05
+Filename            edgar/data/801898/0000801898-10-000005.txt
+File_Path             edgar/data/801898/000080189810000005.txt
+accession_number                          0000801898-10-000005
+year                                                      2010
+QT                                                        QTR1
+Name: 297, dtype: object
+2020-08-05 22:57:16,266 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 801898
+2020-08-05 22:57:16,266 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:16,488 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:16,648 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:16,943 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:16,944 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 393
+CIK                                                     704051
+Company_Name                                    LEGG MASON INC
+Form_Type                                                 10-Q
+Date_Filed                                          2010-02-05
+Filename            edgar/data/704051/0000704051-10-000017.txt
+File_Path             edgar/data/704051/000070405110000017.txt
+accession_number                          0000704051-10-000017
+year                                                      2010
+QT                                                        QTR1
+Name: 347, dtype: object
+2020-08-05 22:57:16,945 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 704051
+2020-08-05 22:57:16,945 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:17,159 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:17,332 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:17,625 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:17,626 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                 564
+CIK                                                     927653
+Company_Name                                     MCKESSON CORP
+Form_Type                                                 10-Q
+Date_Filed                                          2010-01-26
+Filename            edgar/data/927653/0000950123-10-005311.txt
+File_Path             edgar/data/927653/000095012310005311.txt
+accession_number                          0000950123-10-005311
+year                                                      2010
+QT                                                        QTR1
+Name: 372, dtype: object
+2020-08-05 22:57:17,627 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 927653
+2020-08-05 22:57:17,627 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:17,818 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 22:57:18,016 - INFO - 10-k.py - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 22:57:18,302 - ERROR - 10-k.py - __main__ - <module> - 'NoneType' object has no attribute 'find_all'
+2020-08-05 22:57:18,303 - INFO - 10-k.py - __main__ - <module> - Unnamed: 0                                                378
+CIK                                                     64670
+Company_Name                                    MEDTRONIC INC
+Form_Type                                                10-Q
+Date_Filed                                         2010-03-10
+Filename            edgar/data/64670/0000897101-10-000491.txt
+File_Path             edgar/data/64670/000089710110000491.txt
+accession_number                         0000897101-10-000491
+year                                                     2010
+QT                                                       QTR1
+Name: 375, dtype: object
+2020-08-05 22:57:18,304 - INFO - 10-k.py - __main__ - <module> - year: 2010, quater: 2, cik: 64670
+2020-08-05 22:57:18,304 - INFO - 10-k.py - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 22:57:18,494 - INFO - 10-k.py - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 23:00:18,369 - INFO - <ipython-input-1-414b6ecb8e37> - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/index.jsonの情報を取得します
+2020-08-05 23:00:18,738 - INFO - <ipython-input-1-414b6ecb8e37> - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/FilingSummary.xml
+2020-08-05 23:00:26,253 - INFO - <ipython-input-1-414b6ecb8e37> - __main__ - __get_statements_data - https://www.sec.gov/Archives/edgar/data/1121788/000114420410024521/R2.xml
+2020-08-05 23:04:45,110 - INFO - <ipython-input-29-51f6b0ad4386> - __main__ - <module> - Unnamed: 0                                                  751
+CIK                                                     1084869
+Company_Name                              1 800 FLOWERS COM INC
+Form_Type                                                  10-Q
+Date_Filed                                           2018-11-09
+Filename            edgar/data/1084869/0001437749-18-020205.txt
+File_Path             edgar/data/1084869/000143774918020205.txt
+accession_number                           0001437749-18-020205
+year                                                       2018
+QT                                                         QTR4
+Name: 0, dtype: object
+2020-08-05 23:04:46,064 - INFO - <ipython-input-30-bd395ff8755a> - __main__ - <module> - year: 2018, quater: 4, cik: 1084869
+2020-08-05 23:04:48,569 - INFO - <ipython-input-1-414b6ecb8e37> - __main__ - __get_xml_summary - https://www.sec.gov/Archives/edgar/data/1084869/000143774918020205/index.jsonの情報を取得します
+2020-08-05 23:04:49,422 - INFO - <ipython-input-1-414b6ecb8e37> - __main__ - __get_xml_summary - File Path: https://www.sec.gov/Archives/edgar/data/1084869/000143774918020205/FilingSummary.xml
+2020-08-05 23:04:58,216 - INFO - <ipython-input-35-55a65425fbb4> - __main__ - <module> - https://www.sec.gov/Archives/edgar/data/1084869/000143774918020205/R2.htm
+2020-08-05 23:04:58,940 - INFO - <ipython-input-35-55a65425fbb4> - __main__ - <module> - https://www.sec.gov/Archives/edgar/data/1084869/000143774918020205/R4.htm
+2020-08-05 23:04:59,521 - INFO - <ipython-input-35-55a65425fbb4> - __main__ - <module> - https://www.sec.gov/Archives/edgar/data/1084869/000143774918020205/R6.htm

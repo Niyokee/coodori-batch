@@ -19,5 +19,5 @@ ENV form_type=10-Q
 
 COPY ./ ./
 
-CMD ["python", "src/10-k.py"]
+CMD ["python", "src/get_financial_statement.py"]
 
