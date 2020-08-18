@@ -20,7 +20,7 @@ class DBUtil():
             dbname=os.environ["DATABASE_NAME"]
         )
         conn.set_client_encoding('utf-8')
-        logger.info(conn)
+        logging.info(conn)
         return conn
 
     @staticmethod
@@ -56,7 +56,11 @@ class DBUtil():
             dataframeのindexを格納するかどうか。
             defaultはFalse
         """
-        engine = DBUtil.getEngine()
+        try:
+            engine = DBUtil.getEngine()
+        except:
+            sleep(5)
+            engine = DBUtil.getEngine()
         print(engine)
         df.to_sql(table_name, engine, if_exists=if_exists, index=index)
         print(f'{table_name}にinsertしました')

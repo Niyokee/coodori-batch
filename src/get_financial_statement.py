@@ -1,5 +1,7 @@
 import re
 import os
+import sys
+import traceback
 from datetime import datetime
 import requests
 import logging
@@ -44,7 +46,7 @@ def __get_xml_summary(path_to_file):
     # convert a normal url to a document url
     normal_url = base_url + '/Archives/' + path_to_file
     normal_url = normal_url.replace('-', '').replace('.txt', '/index.json')
-    logger.info(f'{normal_url}の情報を取得します')
+    logger.info(f'normal_url: {normal_url}')
     # request the url and decode it.
     content = requests.get(normal_url).json()
 
@@ -138,7 +140,7 @@ def __get_statements_data(statements_dict):
         statement_data['data'] = []
 
         # request the statement file content
-        logger.info(statement_url)
+        logger.info(f'statement_url is {statement_url}')
         content = requests.get(statement_url).content
         report_soup = BeautifulSoup(content, 'html')
 
@@ -153,7 +155,6 @@ def __get_statements_data(statements_dict):
             if (len(row.find_all('th')) == 0 and len(row.find_all('strong')) == 0):
                 try:
                     for ele in cols:
-                        # if ele.find('td'):
                         if ele.get_text():
                             reg_row += [ele.find('td').text]
                         else:
@@ -207,7 +208,8 @@ def __convert_data_to_df(statements_data, cik, year, q, form_type):
         income_df.columns = income_header
         column_list = []
         for column in income_header:
-            dateFormatter = "%b. %d, %Y"
+            column = column.replace('.', '')
+            dateFormatter = "%b %d, %Y"
             column_list += [datetime.strptime(column, dateFormatter)]
         column_index = column_list.index(max(column_list))
         latest_column_name = income_header[column_index]
@@ -215,7 +217,10 @@ def __convert_data_to_df(statements_data, cik, year, q, form_type):
         category_df = pd.DataFrame()
         created_at = datetime.now().strftime('%Y-%m-%d  %H:%M:%S')
         category_df['category'] = income_df.reset_index()['Category']
-        category_df['value'] = income_df[latest_column_name].values.tolist()
+        values = income_df[latest_column_name]
+        if type(income_df[latest_column_name]) != type(pd.Series(1)):
+            values = income_df[latest_column_name].iloc[:,0]
+        category_df['value'] = values.values.tolist()
         category_df['cik'] = cik
         category_df['year'] = year
         category_df['quater'] = q
@@ -238,6 +243,11 @@ def __convert_data_to_df(statements_data, cik, year, q, form_type):
 
 
 if __name__ == "__main__":
+    # start_year = 2012
+    # end_year = 2013
+    # start_quarter = 1
+    # end_quarter = 2
+    # form_type ='10-Q'
     start_year = int(os.environ['start_year'])
     end_year = int(os.environ['end_year'])
     start_quarter = int(os.environ['start_quarter'])
@@ -252,7 +262,6 @@ if __name__ == "__main__":
                 try:
                     cik = str(row['CIK'])
                     logger.info(row)
-                    logger.info(f"year: {year}, quater: {q}, cik: {cik}")
                     path_to_file = str(row['Filename'])
                     xml_summary = __get_xml_summary(path_to_file)
                     master_reports = __get_report_dict(xml_summary)
@@ -261,4 +270,7 @@ if __name__ == "__main__":
                     __convert_data_to_df(
                         statements_data, cik, year, q, form_type)
                 except BaseException as e:
-                    logger.error(f'{e}')
+                    t, v, tb = sys.exc_info()
+                    text = str(traceback.format_exception(t, v, tb))
+                    text = text + str(traceback.format_tb(e.__traceback__))
+                    logger.error(text)
