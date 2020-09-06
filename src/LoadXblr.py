@@ -54,12 +54,11 @@ def create_disclosed_info_df(data, year, term):
     disclosed_info_df = pd.DataFrame(
         data={'CIK': CIK, 'Company_Name': Company_Name, 'Form_Type': Form_Type, 'Date_Filed': Date_Filed, 'Filename': Filename})
     disclosed_info_df = disclosed_info_df.sort_values('Company_Name')
-    disclosed_info_df['File_Path'] = disclosed_info_df['Filename'].str.replace(
-        '-', '')
-    disclosed_info_df['accession_number'] = disclosed_info_df['Filename'].str.replace(
-        r'edgar/data/\d.*/(\d.*).txt', r'\1', regex=True)
+    disclosed_info_df['File_Path'] = disclosed_info_df['Filename'].str.replace('-', '').replace('.txt', '.json')
+    disclosed_info_df['url'] = '/Archives/' + disclosed_info_df['File_Path'].str.replace('.txt', '/index.json')
     disclosed_info_df['year'] = year
     disclosed_info_df['QT'] = term
+    disclosed_info_df.drop(['File_Path', 'Filename'], axis=1, inplace=True)
 
     return disclosed_info_df
 
@@ -80,7 +79,7 @@ def download_full_index():
             urllib.request.urlretrieve(url, download_path)
             columns, data = get_xbrl_idx(download_path)
             disclosed_info_df = create_disclosed_info_df(data, year, term)
-            disclosed_info_df.to_csv(f'./{year}_{term}.csv')
+            disclosed_info_df.to_csv(f'../data/{year}_{term}.csv')
             os.remove(download_path)
 
 

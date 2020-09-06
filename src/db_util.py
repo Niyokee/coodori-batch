@@ -61,6 +61,4 @@ class DBUtil():
         except:
             sleep(5)
             engine = DBUtil.getEngine()
-        print(engine)
         df.to_sql(table_name, engine, if_exists=if_exists, index=index)
-        print(f'{table_name}にinsertしました')
