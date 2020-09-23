@@ -6,6 +6,7 @@ import datetime
 import urllib.request
 import requests
 from bs4 import BeautifulSoup
+import db_util
 
 
 def get_xbrl_idx(file):
@@ -52,13 +53,13 @@ def create_disclosed_info_df(data, year, term):
         Filename += [datum[4]]
 
     disclosed_info_df = pd.DataFrame(
-        data={'CIK': CIK, 'Company_Name': Company_Name, 'Form_Type': Form_Type, 'Date_Filed': Date_Filed, 'Filename': Filename})
-    disclosed_info_df = disclosed_info_df.sort_values('Company_Name')
-    disclosed_info_df['File_Path'] = disclosed_info_df['Filename'].str.replace('-', '').replace('.txt', '.json')
-    disclosed_info_df['url'] = '/Archives/' + disclosed_info_df['File_Path'].str.replace('.txt', '/index.json')
+        data={'cik': CIK, 'company_name': Company_Name, 'form_type': Form_Type, 'date_filed': Date_Filed, 'file_name': Filename})
+    disclosed_info_df = disclosed_info_df.sort_values('company_name')
+    disclosed_info_df['file_path'] = disclosed_info_df['file_name'].str.replace('-', '').replace('.txt', '.json')
+    disclosed_info_df['base_url'] = '/Archives/' + disclosed_info_df['file_path'].str.replace('.txt', '')
     disclosed_info_df['year'] = year
     disclosed_info_df['QT'] = term
-    disclosed_info_df.drop(['File_Path', 'Filename'], axis=1, inplace=True)
+    disclosed_info_df.drop(['file_path', 'file_name'], axis=1, inplace=True)
 
     return disclosed_info_df
 
@@ -79,13 +80,8 @@ def download_full_index():
             urllib.request.urlretrieve(url, download_path)
             columns, data = get_xbrl_idx(download_path)
             disclosed_info_df = create_disclosed_info_df(data, year, term)
-            disclosed_info_df.to_csv(f'../data/{year}_{term}.csv')
+            db_util.DBUtil.insertDf(disclosed_info_df, 'base_info')
             os.remove(download_path)
-
-
-def download_financial_report(disclosed_info_df):
-    for file_path in disclosed_info_df.iterrows():
-        url = base_url + file_path
 
 
 if __name__ == '__main__':

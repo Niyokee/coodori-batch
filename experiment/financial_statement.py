@@ -3,14 +3,31 @@ import sys
 import traceback
 from datetime import datetime
 import requests
-import logging
 import pandas as pd
+import pandas.io.sql as psql
 import numpy as np
 from db_util import *
 from bs4 import BeautifulSoup
 from sqlalchemy import create_engine
 import pandas.io.sql as psql
 import psycopg2 as pg
+from logging import getLogger, StreamHandler, Formatter, FileHandler, DEBUG
+def setup_logger(log_folder, modname=__name__):
+    logger = getLogger(modname)
+    logger.setLevel(DEBUG)
+
+    sh = StreamHandler()
+    sh.setLevel(DEBUG)
+    formatter = Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    sh.setFormatter(formatter)
+    logger.addHandler(sh)
+
+    fh = FileHandler(log_folder) #fh = file handler
+    fh.setLevel(DEBUG)
+    fh_formatter = Formatter('%(asctime)s - %(filename)s - %(name)s - %(lineno)d - %(levelname)s - %(message)s')
+    fh.setFormatter(fh_formatter)
+    logger.addHandler(fh)
+    return logger
 
 
 class FinancialStatement:
@@ -22,11 +39,9 @@ class FinancialStatement:
     def _xml_summary(self, path):
         path_to_xml_summary = FinancialStatement.BASE_URL + path
         content = requests.get(path_to_xml_summary).json()
-        item_name = [item['name'] for item in content['directory']
-                     ['item'] if item['name'] == 'FilingSummary.xml']
+        item_name = [item['name'] for item in content['directory']['item'] if item['name'] == 'FilingSummary.xml']
         # Grab the filing summary and create a new url leading to the file so we can download it
-        xml_summary = FinancialStatement.BASE_URL + \
-            content['directory']['name'] + "/" + item_name[0]
+        xml_summary = FinancialStatement.BASE_URL + content['directory']['name'] + "/" + item_name[0]
 
         return xml_summary
 
@@ -42,8 +57,7 @@ class FinancialStatement:
         # loop through each report in the 'myreports' tag but avoid the last one as this will cause an error.
         for report in reports.find_all('report')[:-1]:
             # let's create a dictionary to store all the different parts we need.
-            report_dict = {'name_short': report.shortname.text,
-                           'name_long': report.longname.text}
+            report_dict = {'name_short': report.shortname.text, 'name_long': report.longname.text}
             try:
                 report_dict['url'] = base_url + report.htmlfilename.text
             except AttributeError:
@@ -91,12 +105,10 @@ class FinancialStatement:
         # let's assume we want all the statements in a single data set.
         statements_data = []
         # define a dictionary that will store the different parts of the statement.
-        statement_data = {'statement_name': statement_name,
-                          'headers': [], 'sections': [], 'data': []}
+        statement_data = {'statement_name': statement_name, 'headers': [], 'sections': [], 'data': []}
 
         # request the statement file content
-        logging.info(
-            f'statement_name is {statement_name} statement_url is {statement_url}')
+        logger.info(f'statement_name is {statement_name} statement_url is {statement_url}')
         content = requests.get(statement_url).content
         report_soup = BeautifulSoup(content, 'html')
 
@@ -131,7 +143,7 @@ class FinancialStatement:
                 statement_data['headers'].append(hed_row)
 
             else:
-                logging.info('We encountered an error.')
+                logger.info('We encountered an error.')
 
         # append it to the master list.
         statements_data.append(statement_data)
@@ -151,10 +163,8 @@ class FinancialStatement:
             income_header = self.statements_data[0]['headers'][1]
         except IndexError:
             income_header = self.statements_data[0]['headers'][0]
-            income_header = [
-                element for element in income_header if not '$' in element]
+            income_header = [element for element in income_header if not '$' in element]
         return income_header
-        # income_data = statements_data[0]['data']
 
     def trim_value(self):
         income_data = self.statements_data[0]['data']
@@ -207,71 +217,130 @@ class FinancialStatement:
         """
         return [category for category in self.values.index.values if re.search(pattern, category, re.IGNORECASE)]
 
+    def insert_df(self, table_name):
+        DBUtil.insertDf(self._make_df(), table_name ,if_exists="append", index=False)
 
 class BalanceSheet(FinancialStatement):
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
-        self.statements_data = self.statements_data(
-            self.statement_name, self.statement_url)
+        self.statements_data = self.statements_data(self.statement_name, self.statement_url)
         self.header = self.income_header()
-        self.value = self.trim_value
+        self.values = self.trim_value()
 
 
 class ProfitLoss(FinancialStatement):
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
-        self.statements_data = self.statements_data(
-            self.statement_name, self.statement_url)
+        self.statements_data = self.statements_data(self.statement_name, self.statement_url)
         self.header = self.income_header()
-        self.value = self.trim_value
+        self.values = self.trim_value()
 
-    def get_number_of_stocks(self):
-        pass
+    def get_shares_outstanding(self):
+        logger.info(f'{sys._getframe().f_code.co_name}')
+        values_diluted = []
+        indices_shares_outstanding = self.find_category_with_regex('diluted')
+        for i in range(len(indices_shares_outstanding)):
+            values_diluted.append(profit_loss.values[indices_shares_outstanding[i]])
+
+        if len(values_diluted) != 2:
+            logger.info(f"values_diluted: {values_diluted}")
+
+        return max(values_diluted)
 
     def get_diluted_eps(self):
-        pass
+        logger.info(f'{sys._getframe().f_code.co_name}')
+        values_diluted = []
+        indices_shares_outstanding = self.find_category_with_regex('diluted')
+        for i in range(len(indices_shares_outstanding)):
+            values_diluted.append(profit_loss.values[indices_shares_outstanding[i]])
+        if len(values_diluted) != 2:
+            logger.info(f"values_diluted: {values_diluted}")
+
+        return min(values_diluted)
+
+    def get_dividends(self):
+        logger.info(f'{sys._getframe().f_code.co_name}')
+        indices_dividend = self.find_category_with_regex('dividend')
+        if len(indices_dividend) == 0:
+            return 0.0
+        else:
+            try:
+                dividends = self.values[indices_dividend].unique()[0]
+            except AttributeError:
+                dividends = self.values[indices_dividend]
+            return dividends
 
     def get_sales(self):
         pass
+
+    def _get_operating_activities(self):
+        sql = f"""SELECT operating_activities FROM cash_flow
+                   WHERE cik    = '{profit_loss.cik}' and
+                         year   = {profit_loss.year} and
+                         quater = {profit_loss.quater}
+                """
+        operating_activities_df = psql.read_sql(sql, DBUtil.getConnect())
+
+        return operating_activities_df.operating_activities.values[0]
+
+    def get_cash_flow_per_share(self):
+        """CFPSを計算するメソッド
+        　　CFPS = (cash flow + amortization) / shares ourstanding
+        """
+        operating_activities = self._get_operating_activities()
+        # TODO balance sheetから減価償却費を取得する
+        amortization = 0.0
+        shares_outstanding = self.get_shares_outstanding()
+
+        return (operating_activities + shares_outstanding) / shares_outstanding
+
+
+
+    def _make_df(self):
+        return pd.DataFrame({'id': None,
+                             'dps': [self.get_dividends()],
+                             'eps': [self.get_diluted_eps()],
+                             'cfps': [self.get_cash_flow_per_share()],
+                             'sps': [self.get_diluted_eps()],
+                             'shares_outstanding': [self.get_shares_outstanding()],
+                             'cik': [self.cik],
+                             'year': [self.year],
+                             'quater': [self.quater],
+                             'form_type': [self.form_type],
+                             'created_at': [datetime.now().strftime('%Y-%m-%d  %H:%M:%S')],
+                             'source': [self.statement_url]
+                             })
+
 
 
 class CashFlow(FinancialStatement):
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
-        self.statements_data = self.statements_data(
-            self.statement_name, self.statement_url)
+        self.statements_data = self.statements_data( self.statement_name, self.statement_url)
         self.header = self.income_header()
         self.values = self.trim_value()
 
     def get_operating_activities_value(self):
         """item名=operating activitiesのindexを取得して、その値を返すメソッド
         """
-        indices_income_from_operation = self.find_category_with_regex(
-            'operating activities')
-        index_income_from_operation = self.trim_index(
-            indices_income_from_operation)
+        indices_income_from_operation = self.find_category_with_regex('operating activities')
+        index_income_from_operation = self.trim_index(indices_income_from_operation)
         try:
-            cash_from_operating_activities = self.values[index_income_from_operation].unique()[
-                0] * self.denomination()
+            cash_from_operating_activities = self.values[index_income_from_operation].unique()[0] * self.denomination()
         except AttributeError:
-            cash_from_operating_activities = self.values[index_income_from_operation] * self.denomination(
-            )
+            cash_from_operating_activities = self.values[index_income_from_operation] * self.denomination()
 
         return cash_from_operating_activities
 
     def get_financing_activities_value(self):
         """item名=financing activitiesのindexを取得して、その値を返すメソッド
         """
-        indices_income_from_financing = self.find_category_with_regex(
-            'financing activities')
-        index_income_from_financing = self.trim_index(
-            indices_income_from_financing)
+        indices_income_from_financing = self.find_category_with_regex('financing activities')
+        index_income_from_financing = self.trim_index(indices_income_from_financing)
         try:
-            cash_from_financing_activities = self.values[index_income_from_financing].unique()[
-                0] * self.denomination()
+            cash_from_financing_activities = self.values[index_income_from_financing].unique()[0] * self.denomination()
         except AttributeError:
-            cash_from_financing_activities = self.values[index_income_from_financing] * self.denomination(
-            )
+            cash_from_financing_activities = self.values[index_income_from_financing] * self.denomination()
         return cash_from_financing_activities
 
     def get_cash_beginning(self):
@@ -280,11 +349,9 @@ class CashFlow(FinancialStatement):
         indices_cash_beginning = self.find_category_with_regex('beginning of')
         index_income_cash_beginning = self.trim_index(indices_cash_beginning)
         try:
-            cash_beginning = self.values[index_income_cash_beginning].unique()[
-                0] * self.denomination()
+            cash_beginning = self.values[index_income_cash_beginning].unique()[0] * self.denomination()
         except AttributeError:
-            cash_beginning = self.values[index_income_cash_beginning] * \
-                self.denomination()
+            cash_beginning = self.values[index_income_cash_beginning] * self.denomination()
         return cash_beginning
 
     def get_cash_end(self):
@@ -293,8 +360,7 @@ class CashFlow(FinancialStatement):
         indices_cash_end = self.find_category_with_regex('end of')
         index_income_cash_end = self.trim_index(indices_cash_end)
         try:
-            cash_end = self.values[index_income_cash_end].unique()[
-                0] * self.denomination()
+            cash_end = self.values[index_income_cash_end].unique()[0] * self.denomination()
         except AttributeError:
             cash_end = self.values[index_income_cash_end] * self.denomination()
         return cash_end
@@ -302,16 +368,12 @@ class CashFlow(FinancialStatement):
     def get_investing_activities_value(self):
         """item名=investing activitiesのindexを取得して、その値を返すメソッド
         """
-        indices_income_from_investing = self.find_category_with_regex(
-            'investing activities')
-        index_income_from_investing = self.trim_index(
-            indices_income_from_investing)
+        indices_income_from_investing = self.find_category_with_regex('investing activities')
+        index_income_from_investing = self.trim_index(indices_income_from_investing)
         try:
-            cash_from_investing_activities = self.values[index_income_from_investing].unique()[
-                0] * self.denomination()
+            cash_from_investing_activities = self.values[index_income_from_investing].unique()[0] * self.denomination()
         except AttributeError:
-            cash_from_investing_activities = self.values[index_income_from_investing] * self.denomination(
-            )
+            cash_from_investing_activities = self.values[index_income_from_investing] * self.denomination()
         return cash_from_investing_activities
 
     def _make_df(self):
@@ -329,15 +391,17 @@ class CashFlow(FinancialStatement):
                              'source': [self.statement_url]
                              })
 
-    def insert_df(self):
-        DBUtil.insertDf(self._make_df(), 'cash_flow',
-                        if_exists="append", index=False)
-
 
 if __name__ == '__main__':
+    # 保存するファイル名を指定
+    # log_folder = '{0}.log'.format(datetime.date.today())
+    # ログの初期設定を行う
+    logger = setup_logger('logging.log')
     start_year = 2018
+    year = 2018
     end_year = 2019
     start_quarter = 1
+    quater = 1
     end_quarter = 2
     form_type = '10-K'
     # start_year = int(os.environ['start_year'])
@@ -345,34 +409,48 @@ if __name__ == '__main__':
     # start_quarter = int(os.environ['start_quarter'])
     # end_quarter = int(os.environ['end_quarter'])
     # form_type = os.environ['form_type']
+    header_list = []
+    name_list_1 = []
+    name_list_2 = []
+    url_list = []
 
     for year in range(start_year, end_year):
         for quater in range(start_quarter, end_quarter):
-            source_df = pd.read_csv(f'../data/{year}_QTR{quater}.csv')
+            source_df = pd.read_csv(f'./data/{year}_QTR{quater}.csv')
             source_df = source_df[source_df['Form_Type'] == form_type]
             for _, row in source_df.iterrows():
                 try:
-                    logging.info(row)
+                    # logger.info(row)
                     FinancialStatement.cik = str(row['CIK'])
                     FinancialStatement.year = year
                     FinancialStatement.quater = quater
                     FinancialStatement.form_type = form_type
                     financial_statement = FinancialStatement(str(row['url']))
                     report_list = financial_statement.report_list()
-                    statements_dict = financial_statement.statements_dict(
-                        report_list)
+                    statements_dict = financial_statement.statements_dict(report_list)
 
                     for statement_name, statement_url in statements_dict.items():
                         if '(0)' in statement_name:
-                            balance_sheet = BalanceSheet(
-                                statement_name=statement_name, statement_url=statement_url)
+                            balance_sheet = BalanceSheet(statement_name=statement_name, statement_url=statement_url)
                         elif '(1)' in statement_name:
-                            profit_loss = ProfitLoss(
-                                statement_name=statement_name, statement_url=statement_url)
+                            profit_loss = ProfitLoss(statement_name=statement_name, statement_url=statement_url)
+                            logger.info(profit_loss.cik)
+                            logger.info('='*80)
+                            logger.info(f"header: {profit_loss.statements_data[0]['headers'][0][0]}")
+                            header_list.append(profit_loss.statements_data[0]['headers'][0][0])
+                            logger.info(f"regex_diluted_name: {profit_loss.find_category_with_regex('diluted')}")
+                            if len(profit_loss.find_category_with_regex('diluted')) > 1:
+                              name_list_1.append(profit_loss.find_category_with_regex('diluted')[0])
+                              name_list_2.append(profit_loss.find_category_with_regex('diluted')[1])
+                            else:
+                                name_list_1.append(profit_loss.find_category_with_regex('diluted'))
+                                name_list_2.append(None)
+                            url_list.append(profit_loss.statement_url)
+                            # profit_loss.insert_df('profit_loss')
                         elif '(2)' in statement_name:
-                            cash_flow = CashFlow(
-                                statement_name=statement_name, statement_url=statement_url)
-                            cash_flow.insert_df()
+                            cash_flow = CashFlow(statement_name=statement_name, statement_url=statement_url)
+                            cash_flow.insert_df('cash_flow')
                 except BaseException as e:
-                    logging.error(e)
-                    logging.error(row)
+                    logger.error(e)
+                    logger.error(row)
+    pd.DataFrame({'header': header_list, 'diluted_match1': name_list_1, 'diluted_match2': name_list_2, 'url_list': url_list}).to_csv('./result.csv')
