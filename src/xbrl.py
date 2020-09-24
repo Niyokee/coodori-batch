@@ -180,6 +180,11 @@ class FinancialStatement:
     tag = 'us-gaap:' + tag_df['tag'][0]
     return tag
 
+  def make_df(self):
+    tmp_dict = self.__dict__
+    del tmp_dict['soup'], tmp_dict['contextref'], tmp_dict['item_table']
+    return pd.DataFrame.from_dict(tmp_dict, orient='index').T
+
 class IncomeStatement(FinancialStatement):
   def __init__(self):
     super().__init__()
