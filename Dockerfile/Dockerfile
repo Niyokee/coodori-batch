@@ -11,13 +11,6 @@ ENV DATABASE_PASSWORD edgar-dev
 ENV DATABASE_PORT 5432
 ENV DATABASE_NAME postgres
 
-ENV start_year=2012
-ENV end_year=2013
-ENV start_quarter=1
-ENV end_quarter=2
-ENV form_type=10-Q
-
 COPY ./ ./
 
-CMD ["python", "src/ financial_statement.py"]
-
+CMD ["python", "src/xbrl.py"]
