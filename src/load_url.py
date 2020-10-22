@@ -55,13 +55,16 @@ def create_disclosed_info_df(data, year, term):
     disclosed_info_df = pd.DataFrame(
         data={'cik': CIK, 'company_name': Company_Name, 'form_type': Form_Type, 'date_filed': Date_Filed, 'file_name': Filename})
     disclosed_info_df = disclosed_info_df.sort_values('company_name')
-    disclosed_info_df['file_path'] = disclosed_info_df['file_name'].str.replace('-', '').replace('.txt', '.json')
-    disclosed_info_df['base_url'] = '/Archives/' + disclosed_info_df['file_path'].str.replace('.txt', '')
+    disclosed_info_df['file_path'] = disclosed_info_df['file_name'].str.replace(
+        '-', '').replace('.txt', '.json')
+    disclosed_info_df['base_url'] = '/Archives/' + \
+        disclosed_info_df['file_path'].str.replace('.txt', '')
     disclosed_info_df['year'] = year
     disclosed_info_df['QT'] = term
     disclosed_info_df.drop(['file_path', 'file_name'], axis=1, inplace=True)
 
     return disclosed_info_df
+
 
 def download_full_index():
     """
@@ -80,6 +83,8 @@ def download_full_index():
             urllib.request.urlretrieve(url, download_path)
             columns, data = get_xbrl_idx(download_path)
             disclosed_info_df = create_disclosed_info_df(data, year, term)
+            disclosed_info_df[disclosed_info_df['form_type'].isin(
+                ['10-Q', '10-Q', '8-K', 'S-1'])]
             db_util.DBUtil.insertDf(disclosed_info_df, 'base_info')
             os.remove(download_path)
 
