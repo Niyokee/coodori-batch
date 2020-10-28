@@ -113,11 +113,12 @@ class Idx():
             df: df
         """
         df = self._row_df()
-        df['base_url'] = '/Archives/' + \
-            df['base_url'].str.replace('-', '').replace('.txt', '')
+        df['base_url'] = '/Archives/' + df['base_url'].str.replace('-', '').replace('.txt', '')
+        df['base_url'] = df['base_url'].str.replace('.txt', '')
         df['year'] = int(self.year())
         df['QT'] = 'QTR' + self._current_quater()
-        df[df['form_type'].isin(['10-Q', '10-Q', '8-K', 'S-1'])]
+        df = df[df['form_type'].isin(
+            ['10-Q', '10-Q', '8-K', 'S-1', '10-Q/A', '10-Q/A', '8-K/A', 'S-1/A'])]
         df.reindex(columns=['cik', 'company_name',
                             'form_type', 'date_filed', 'base_url', 'year', 'QT'])
         return df
