@@ -11,7 +11,7 @@ os.environ["DATABASE_NAME"]='postgres'
 
 class DBUtil():
     @staticmethod
-    def getConnect():
+    def conn():
         conn = pg.connect(
             user=os.environ["DATABASE_USERNAME"],
             host=os.environ["DATABASE_HOST"],
@@ -24,7 +24,7 @@ class DBUtil():
         return conn
 
     @staticmethod
-    def getEngine():
+    def engine():
         engine = create_engine(
             "postgresql://" +
             os.environ["DATABASE_USERNAME"] +
@@ -57,8 +57,43 @@ class DBUtil():
             defaultはFalse
         """
         try:
-            engine = DBUtil.getEngine()
+            engine = DBUtil.engine()
         except:
             sleep(5)
-            engine = DBUtil.getEngine()
+            engine = DBUtil.engine()
         df.to_sql(table_name, engine, if_exists=if_exists, index=index)
+
+    @staticmethod
+    def cursor(conn):
+        return conn.cursor()
+
+    @staticmethod
+    def execute(cur, query):
+        return cur.execute(query)
+
+    @staticmethod
+    def commit(conn):
+        return conn.commit()
+
+    @staticmethod
+    def cur_close(cur):
+        return cur.close()
+
+    @staticmethod
+    def conn_close(conn):
+        return conn.close()
+
+    @staticmethod
+    def fetch_one(query):
+        with DBUtil.conn() as conn:
+            with conn.cursor() as cur:
+                cur.execute(query)
+                return cur.fetchone()
+
+    @staticmethod
+    def fetch_many(query):
+        with DBUtil.conn() as conn:
+            with conn.cursor() as cur:
+                cur.execute(query)
+                return cur.fetchmany()
+
