@@ -95,5 +95,5 @@ class DBUtil():
         with DBUtil.conn() as conn:
             with conn.cursor() as cur:
                 cur.execute(query)
-                return cur.fetchmany()
+                return cur.fetchall()
 

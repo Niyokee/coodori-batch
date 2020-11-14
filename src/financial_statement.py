@@ -1,16 +1,7 @@
 import re
-import time
-from tqdm import tqdm
 import requests
-from bs4 import BeautifulSoup
-import pandas as pd
-import pandas.io.sql as psql
 from db_util import DBUtil as db
 from bs4 import BeautifulSoup
-from sqlalchemy import create_engine
-import pandas.io.sql as psql
-import psycopg2 as pg
-import datetime
 
 
 class FinancialStatement:
@@ -338,18 +329,20 @@ class FinancialStatement:
 
 if __name__ == '__main__':
     cik = '789019'
-    base_url = '/Archives/edgar/data/789019/000156459020002450/'
-    f = FinancialStatement(base_url, cik)
     conn = db.conn()
     cur = db.cursor(conn)
-    for ref in f.context_refs():
-        for tag in [tag for tag in f.tags(ref) if not tag.name.startswith('dei:')]:
-            try:
-                category_ids = f.category_ids(tag.name)
-                if f.table(category_ids['prime_category_id']) == 'income_statements':
-                    params = f.insert_query_params(ref=ref, cik=cik, tag=tag, category_ids=category_ids)
-                    db.execute(cur, f.insert_query(params))
-            except BaseException as e:
-                continue
-    db.commit(conn)
+    query = f"select base_url from base_info where cik = '{cik}' and form_type <> '8-K'"
+    urls = db.fetch_many(query)
+    for base_url in urls:
+        f = FinancialStatement(base_url[0], cik)
+        for ref in f.context_refs():
+            for tag in [tag for tag in f.tags(ref) if not tag.name.startswith('dei:')]:
+                try:
+                    category_ids = f.category_ids(tag.name)
+                    if f.table(category_ids['prime_category_id']) == 'income_statements':
+                        params = f.insert_query_params(ref=ref, cik=cik, tag=tag, category_ids=category_ids)
+                        db.execute(cur, f.insert_query(params))
+                except BaseException as e:
+                    continue
+        db.commit(conn)
     db.cur_close(cur)
