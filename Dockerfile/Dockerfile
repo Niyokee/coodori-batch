@@ -5,11 +5,11 @@ WORKDIR /app
 COPY ./requirements.txt ./
 RUN pip install -r requirements.txt
 
-ENV DATABASE_USERNAME postgres
-ENV DATABASE_HOST edgar-dev.cziomxrz0xjc.ap-northeast-1.rds.amazonaws.com
-ENV DATABASE_PASSWORD edgar-dev
+ENV DATABASE_USERNAME
+ENV DATABASE_HOST
+ENV DATABASE_PASSWORD
 ENV DATABASE_PORT 5432
-ENV DATABASE_NAME postgres
+ENV DATABASE_NAME
 
 ENV start_year=2012
 ENV end_year=2013
