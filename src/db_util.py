@@ -3,12 +3,6 @@ import psycopg2 as pg
 import logging
 from sqlalchemy import create_engine
 
-os.environ["DATABASE_USERNAME"]='postgres'
-os.environ["DATABASE_HOST"]='edgar-dev.cziomxrz0xjc.ap-northeast-1.rds.amazonaws.com'
-os.environ["DATABASE_PASSWORD"]='edgar-dev'
-os.environ["DATABASE_PORT"]='5432'
-os.environ["DATABASE_NAME"]='postgres'
-
 class DBUtil():
     @staticmethod
     def getConnect():
